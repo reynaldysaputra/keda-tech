@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Login() {
-  const [loading, setLoading] = useState(false);
-
   return (
     <div className="flex min-h-screen items-center justify-center">
       <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-lg ">
@@ -25,17 +22,7 @@ focus:ring-blue-100"
         />
 
         <button className="w-full rounded bg-blue-600 py-3 text-white">
-          {
-            loading
-              ?
-
-              "Loading..."
-
-              :
-
-              "Login"
-
-          }
+          Login
         </button>
 
         <Link
