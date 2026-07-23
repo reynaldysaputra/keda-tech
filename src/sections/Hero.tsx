@@ -35,13 +35,17 @@ export default function Hero() {
 
             <div className="mt-10 flex gap-4">
               <Button>
-                Get Started
+                <a href="#pricing">
+                  Get Started
+                </a>
               </Button>
 
               <Button
-                className="border border-blue-600 bg-white text-blue-600 hover:bg-blue-50"
+                className="border border-blue-600 bg-white hover:bg-blue-50 group"
               >
-                Learn More
+                <a href="#about" className="text-blue-600 group-hover:text-white">
+                  Learn More
+                </a>
               </Button>
             </div>
           </motion.div>

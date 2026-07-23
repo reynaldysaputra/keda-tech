@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 import Container from "./Container";
 import { menus } from "../../constants/menu";
 import Button from "../ui/Button";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("home");
+
   return (
     <header className="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
       <Container>
@@ -20,17 +25,54 @@ export default function Navbar() {
               <a
                 key={menu.title}
                 href={menu.href}
-                className="transition hover:text-blue-600"
+                onClick={() => setActive(menu.title.toLowerCase())}
+                className={
+                  active === menu.href
+                    ? "text-blue-600 font-semibold"
+                    : ""
+                }
               >
                 {menu.title}
               </a>
             ))}
           </nav>
 
-          <Link to="/login">
-            <Button>Login</Button>
-          </Link>
+          <div>
+            <Link to="/login" className="mr-2">
+              <Button>Login</Button>
+            </Link>
+            <button
+              className="md:hidden"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {
+                isOpen
+                  ? <FaTimes size={22} />
+                  : <FaBars size={22} />
+              }
+            </button>
+          </div>
         </div>
+
+        {
+          isOpen && (
+
+            <div className="absolute left-0 top-full w-full bg-white shadow-lg">
+
+              {menus.map(menu => (
+                <a
+                  key={menu.title}
+                  href={menu.href}
+                  className="block border-b p-5"
+                >
+                  {menu.title}
+                </a>
+              ))}
+
+            </div>
+
+          )
+        }
       </Container>
     </header>
   );
