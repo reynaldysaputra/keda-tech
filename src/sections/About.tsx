@@ -1,0 +1,10 @@
+export default function About() {
+  return (
+    <section
+      id="about"
+      className="py-32"
+    >
+      About Section
+    </section>
+  );
+}
