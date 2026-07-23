@@ -5,14 +5,14 @@ import Button from "../ui/Button";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
       <Container>
         <div className="flex h-20 items-center justify-between">
           <Link
             to="/"
-            className="text-2xl font-bold text-blue-600"
+            className="text-2xl font-bold text-blue-600 transition-all duration-300 hover:text-blue-600 hover:-translate-y-1"
           >
-            ERP.
+            ERP<span className="text-blue-600">Pro</span>
           </Link>
 
           <nav className="hidden gap-8 md:flex">

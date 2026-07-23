@@ -13,7 +13,7 @@ export default function Button({
   return (
     <button
       className={clsx(
-        "rounded-lg bg-blue-600 px-5 py-3 text-white transition hover:bg-blue-700",
+        "rounded-lg bg-blue-600 px-5 py-3 text-white transition hover:bg-blue-700 duration-300 hover:-translate-y-1 hover:shadow-xl",
         className
       )}
       {...props}
